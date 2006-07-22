@@ -1,0 +1,55 @@
+NAME
+    Catalyst::Plugin::Cache::Store::FastMmap - FastMmap cache store for
+    Catalyst::Plugin::Cache.
+
+SYNOPSIS
+        use Catalyst qw/
+            Cache
+            Cache::Store::FastMmap
+        /;
+
+        __PACKAGE__->config( cache => {
+            backend => {
+                share_file => "/path/to/file",
+                cache_size => "16m",
+                # any other Cache::Cache config param
+            },
+        });
+
+DESCRIPTION
+    This store plugin is a bit of a wrapper for Cache::FastMmap.
+
+    While you could normally just configure with
+
+        backend => {
+            class => "Cache::FastMmap",
+            share_file => ...,
+        }
+
+    Cache::FastMmap can't store plain values by default. This module ships
+    with a subclass that will wrap all values in a scalar reference before
+    storing.
+
+    This store plugin will try to provide a default "share_file" as well,
+    that won't clash with other apps.
+
+CONFIGURATION
+    See "CONFIGURATION" in Catalyst::Plugin::Cache for a general overview of
+    cache plugin configuration.
+
+    This plugin just takes a hash reference in the backend field and passes
+    it on to Cache::FastMmap.
+
+SEE ALSO
+    Catalyst::Plugin::Cache, Cache::FastMmap.
+
+AUTHOR
+    Yuval Kogman, "nothingmuch@woobling.org"
+
+COPYRIGHT & LICENSE
+    Copyright (c) Yuval Kogman, 2006. All rights reserved.
+
+    This library is free software, you can redistribute it and/or modify it
+    under the same terms as Perl itself, as well as under the terms of the
+    MIT license.
+
