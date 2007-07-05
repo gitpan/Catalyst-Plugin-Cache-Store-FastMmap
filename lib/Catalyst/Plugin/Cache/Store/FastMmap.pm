@@ -5,7 +5,7 @@ package Catalyst::Plugin::Cache::Store::FastMmap;
 use strict;
 use warnings;
 
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 
 use Path::Class     ();
 use File::Spec      ();
@@ -33,23 +33,31 @@ __END__
 
 =head1 NAME
 
-Catalyst::Plugin::Cache::Store::FastMmap - FastMmap cache store for
-L<Catalyst::Plugin::Cache>.
+Catalyst::Plugin::Cache::Store::FastMmap - B<DEPRECATED> - FastMmap cache store
+for L<Catalyst::Plugin::Cache>.
 
 =head1 SYNOPSIS
 
+    # instead of using this plugin, you can now do this:
+
     use Catalyst qw/
         Cache
-        Cache::Store::FastMmap
     /;
 
     __PACKAGE__->config( cache => {
         backend => {
+            class => "Cache:FastMmap",
             share_file => "/path/to/file",
             cache_size => "16m",
-            # any other Cache::Cache config param
         },
     });
+
+=head1 STATUS
+
+This plugin is deprecated because L<Cache::FastMmap> no longer needs to be
+wrapped to store plain values. It is still available on the CPAN for backwards
+compatibility and will still work with newer versions of Cache::FastMmap with a
+slight performance degredation.
 
 =head1 DESCRIPTION
 

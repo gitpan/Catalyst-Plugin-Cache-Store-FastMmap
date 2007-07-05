@@ -1,26 +1,15 @@
----
-name: Catalyst-Plugin-Cache-Store-FastMmap
-version: 0.01
-author:
-  - 'Yuval Kogman, C<nothingmuch@woobling.org>'
-abstract: |-
-  FastMmap cache store for
-  L<Catalyst::Plugin::Cache>.
-license: perl
-resources:
-  license: http://dev.perl.org/licenses/
-requires:
-  Cache::FastMmap: 0
-  Catalyst: 5.7
-  Catalyst::Plugin::Cache: 0.01
-  Path::Class: 0
-provides:
-  Catalyst::Plugin::Cache::Backend::FastMmap:
-    file: lib/Catalyst/Plugin/Cache/Backend/FastMmap.pm
-  Catalyst::Plugin::Cache::Store::FastMmap:
-    file: lib/Catalyst/Plugin/Cache/Store/FastMmap.pm
-    version: 0.01
-generated_by: Module::Build version 0.2801
+--- #YAML:1.0
+name:                Catalyst-Plugin-Cache-Store-FastMmap
+version:             0.02
+abstract:            ~
+license:             ~
+generated_by:        ExtUtils::MakeMaker version 6.32
+distribution_type:   module
+requires:     
+    Cache::FastMmap:               0
+    Catalyst:                      5.7
+    Catalyst::Plugin::Cache:       0.01
+    Path::Class:                   0
 meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
+    url:     http://module-build.sourceforge.net/META-spec-v1.2.html
+    version: 1.2
